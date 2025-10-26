@@ -230,7 +230,7 @@ st.markdown("""
 
 # Initialize session state
 if "api_url" not in st.session_state:
-    st.session_state.api_url = st.secrets.get("API_URL")
+    st.session_state.api_url = st.secrets.get("API_URL",)
 if "last_content" not in st.session_state:
     st.session_state.last_content = None
 if "stream_data" not in st.session_state:
@@ -289,13 +289,13 @@ with col2:
     tone_options = [
         "شاعري", "طبيعي", "احترافي", "فكاهي",
         "منعش", "موثوق", "فاخر", "حديث",
-        "عائلي", "صحي", "ودود", "مثير"
+        "عائلي", "صحي", "ودود", "مثير","شبابي","طبيعي"
     ]
 
     selected_tones = st.multiselect(
         "اختر نبرة أو أكثر (1-10 نبرات)",
         tone_options,
-        default=["شاعري", "طبيعي"],
+        default=["طبيعي","شبابي","طبيعي","منعش"],
         max_selections=10,
         label_visibility="collapsed"
     )
