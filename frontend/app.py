@@ -230,7 +230,7 @@ st.markdown("""
 
 # Initialize session state
 if "api_url" not in st.session_state:
-    st.session_state.api_url = "http://localhost:8000"
+    st.session_state.api_url = st.secrets.get("API_URL")
 if "last_content" not in st.session_state:
     st.session_state.last_content = None
 if "stream_data" not in st.session_state:
